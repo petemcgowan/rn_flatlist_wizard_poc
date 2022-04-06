@@ -26,32 +26,27 @@ const imagesData = [
   {
     key: 1,
     title: "gender",
-    image:
-      "https://images.pexels.com/photos/3147528/pexels-photo-3147528.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    image: require("./assets/beach-footsteps-small.jpg"),
   },
   {
     key: 2,
     title: "age",
-    image:
-      "https://images.pexels.com/photos/2552130/pexels-photo-2552130.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    image: require("./assets/beach-solo-running-sand-small.jpg"),
   },
   {
     key: 3,
     title: "height",
-    image:
-      "https://images.pexels.com/photos/5080167/pexels-photo-5080167.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    image: require("./assets/beach-triangle-palms-small.jpg"),
   },
   {
     key: 4,
     title: "frame",
-    image:
-      "https://images.pexels.com/photos/5602879/pexels-photo-5602879.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    image: require("./assets/beach-multi-palm-trees-argh-small.jpg"),
   },
   {
     key: 5,
     title: "weight",
-    image:
-      "https://images.pexels.com/photos/2552130/pexels-photo-2552130.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    image: require("./assets/beach-white-sands-oh-so-ronery-small.jpg"),
   },
 ];
 
@@ -68,6 +63,12 @@ export default function App() {
     console.log("handleCalculate, heightValue:" + heightValue);
     console.log("handleCalculate, frameValue:" + frameValue);
     console.log("handleCalculate, weightValue:" + weightValue);
+
+    imagesData.push({
+      key: 6,
+      title: "result",
+      image: require("./assets/blue-palm-trees-small.jpg"),
+    });
   };
 
   // **********  Gender  **********
@@ -101,7 +102,8 @@ export default function App() {
           return (
             <View style={{ width, height }}>
               <ImageBackground
-                source={{ uri: item.image }}
+                // source={{ uri: item.image }}
+                source={item.image}
                 style={{ flex: 1, resizeMode: "cover" }}
               >
                 <View
@@ -143,13 +145,12 @@ export default function App() {
                         <WeightSlide
                           frameValue={weightValue}
                           setWeightValue={setWeightValue}
+                          handleCalculate={handleCalculate}
                         />
                       ),
+                      result: <ResultSlide />,
                     }[item.title]
                   }
-                  <Text style={{ color: "#fff" }}>
-                    Centered Text (both vertically and horizontally)
-                  </Text>
                 </View>
               </ImageBackground>
             </View>
