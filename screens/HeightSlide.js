@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 const HeightSlide = ({ heightValue, setHeightValue }) => {
   return (
     <View>
-      <Text>HeightSlide3</Text>
+      <Text style={styles.textText}>Enter Height</Text>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -21,10 +21,18 @@ const styles = StyleSheet.create({
     borderRightWidth: 4,
     height: 70,
   },
+  textText: {
+    alignSelf: "center",
+    color: "#FFCB1F",
+    fontSize: 25,
+    fontWeight: "bold",
+  },
   input: {
     height: 70,
     backgroundColor: "#666666",
-    color: "#ffffff",
+    color: "#FFCB1F",
+    fontSize: 15,
+    // color: "#ffffff",
     paddingLeft: 15,
     paddingRight: 15,
   },

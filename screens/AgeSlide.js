@@ -3,10 +3,10 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 const AgeSlide = ({ ageValue, setAgeValue }) => {
   return (
     <View>
-      <Text>AgeSlide2</Text>
+      <Text style={styles.textText}>Enter Age</Text>
       <View style={styles.inputContainer}>
         <TextInput
-          style={styles.input}
+          style={[styles.input, styles.textText]}
           value={ageValue}
           onChangeText={setAgeValue}
         />
@@ -23,10 +23,15 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 70,
-    backgroundColor: "#666666",
-    color: "#ffffff",
+    backgroundColor: "#222444",
     paddingLeft: 15,
     paddingRight: 15,
+  },
+  textText: {
+    alignSelf: "center",
+    color: "#FFCB1F",
+    fontSize: 25,
+    fontWeight: "bold",
   },
 });
 
